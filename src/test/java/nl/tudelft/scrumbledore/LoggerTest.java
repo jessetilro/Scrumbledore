@@ -88,7 +88,7 @@ public class LoggerTest {
   @Test
   public final void testGetFirstLine() {
     String toCompare = logger.getFirstLine();
-    assertEquals(toCompare, "--------------------SCRUMBLEDORE LOGGING FILE");
+    assertEquals("--------------------SCRUMBLEDORE LOGGING FILE", toCompare);
   }
 
   /**
@@ -97,9 +97,11 @@ public class LoggerTest {
    */
   @Test
   public final void testGetLastLine() {
+    logger.log("log_write_test");
+    
     String toCompare = logger.getLastLine();
 
-    assertEquals(toCompare, "log_write_test");
+    assertEquals("log_write_test", toCompare);
   }
 
 }
